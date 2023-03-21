@@ -10,6 +10,7 @@ export default function Data() {
       //   .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         setDataStore(res.data);
+        console.log(res)
       })
       .catch((error) => {
         console.log(error);
