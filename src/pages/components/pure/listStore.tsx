@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faSort } from "@fortawesome/free-solid-svg-icons";
 import {
   faPlusSquare,
   faMinusSquare,
@@ -10,6 +10,9 @@ import Product from "./product";
 export default function ListStore(data: any) {
   const [dataStore, setDataStore] = useState({});
   const [busqueda, setBusqueda] = useState("");
+  const [temp, setTemp] = useState(false);
+
+  
 
   const handleOnChange = (e: any) => {
     setBusqueda(e.target.value);
@@ -23,16 +26,20 @@ export default function ListStore(data: any) {
     setDataStore([...filterData]);
   };
 
-  const sortUp = () => {
-    const dataCopy = data.data?.sort((a: any, b: any) => b.price - a.price);
-    setDataStore([...dataCopy]);
+  const sort = () => {
+    if(temp){
+      const dataCopy = data.data?.sort((a: any, b: any) => b.price - a.price);
+      setDataStore([...dataCopy]);
+      setTemp(!temp)
+    }else{
+      const dataCopy = data.data?.sort((a: any, b: any) => a.price - b.price);
+      setDataStore([...dataCopy]);
+      setTemp(!temp)
+    }
   };
-  const sortDown = () => {
-    const dataCopy = data.data?.sort((a: any, b: any) => a.price - b.price);
-    setDataStore([...dataCopy]);
-  };
-  useEffect(() => {
+   useEffect(() => {
     setDataStore(data.data);
+   
   }, [data]);
   return (
     <div className="container-fluid">
@@ -47,15 +54,20 @@ export default function ListStore(data: any) {
             placeholder="search by Name"
             onChange={handleOnChange}
           />
-          <button className="btn btn-success m-1">
+          <button className="btn btn-success m-1"
+          onClick={()=>setBusqueda("")}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
+          <button className="btn btn-success m-1"
+          onClick={sort}>
+          <FontAwesomeIcon icon={faSort} />
+          </button>
         </div>
-        <div className="sort d-flex">
-          <button className="btn btn-success m-1" onClick={sortDown}>
+        <div className="d-flex">
+          <button className="btn btn-success m-1" >
             <FontAwesomeIcon icon={faMinusSquare} />
           </button>
-          <button className="btn btn-success m-1" onClick={sortUp}>
+          <button className="btn btn-success m-1" >
             <FontAwesomeIcon icon={faPlusSquare} />
           </button>
         </div>
