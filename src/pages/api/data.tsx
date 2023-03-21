@@ -6,7 +6,8 @@ export default function Data() {
   const [dataStore, setDataStore] = useState([]);
   const getData = async () => {
     await axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://fakestoreapi.com/products")
+      //   .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         setDataStore(res.data);
       })
@@ -14,12 +15,10 @@ export default function Data() {
         console.log(error);
       });
   };
-  
+
   useEffect(() => {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return (
-    <ListStore data={dataStore}/>
-  );
+  return <ListStore data={dataStore} />;
 }

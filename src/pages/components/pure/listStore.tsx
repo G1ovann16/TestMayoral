@@ -5,7 +5,7 @@ import {
   faPlusSquare,
   faMinusSquare,
 } from "@fortawesome/free-regular-svg-icons";
-import Product from "./Product";
+import Product from "./product";
 
 export default function ListStore(data: any) {
   const [dataStore, setDataStore] = useState([]);
@@ -17,21 +17,19 @@ export default function ListStore(data: any) {
     console.log(busqueda);
   };
 
-  const filtrar =  (b: string) => {
-    dataStore
-      .filter((item) => item.name.toLowerCase().includes(b))
-      .map((e: any, i: number) =>   setDataStore(e));
+  const filtrar = (b: string) => {
+    data.data
+      .filter((item) => item?.title.toLowerCase().includes(b))
+      .map((e: any, i: number) => setDataStore(e));
   };
 
-  const sortUp = () =>{
+  const sortUp = () => {};
 
-  }
-
-  const sortDown = () =>{
-// dataStore.sort
-  }
+  const sortDown = () => {
+    // dataStore.sort
+  };
   useEffect(() => {
-    setDataStore(data.data);  
+    setDataStore(data.data);
   }, [data]);
   return (
     <div className="container-fluid">
@@ -60,7 +58,8 @@ export default function ListStore(data: any) {
         </div>
       </div>
       <div className="row m-3 p-2">
-        {dataStore && dataStore?.map((d: any, i: number) => (
+        {/* dataStore && dataStore */}
+        {data.data?.map((d: any, i: number) => (
           <Product d={d} key={i} />
         ))}
       </div>

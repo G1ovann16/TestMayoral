@@ -3,14 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PropTypes from 'prop-types';
 
 const Product = (d:any, key:number) => {
- const {name,id}=d.d
+ const {title,id, image, price}=d.d
+ console.log(title,id, image, price)
+
   return (
     <div id={id} className="col-lg-2 card">
-        <img src="https://maximmart.com/images/detailed/1/12%D0%BD%D0%B012_small-photo(3).jpg" className="card-img-top" alt="..."/>
+        <img src={image} className="card-img-top" alt="..."/>
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
+          <h4 className="card-title">{title}</h4>
+          <h5 className="card-text">{price}</h5>
+          <h6 className="card-text">{price}</h6>
+          <a href="#" className="btn btn-primary">Add to car</a>
         </div>
       </div>
   );
