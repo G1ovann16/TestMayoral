@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const Product = (d:any, key:number) => {
  const {title,id, image, price}=d.d
- console.log(title,id, image, price)
 
   return (
     <div id={id} className="col-lg-2 card">
@@ -18,13 +17,4 @@ const Product = (d:any, key:number) => {
       </div>
   );
 };
-// Products.propType={
-//   dataStore: PropTypes.arrayOf(
-//     PropTypes.shape(
-//       {
-//         id:PropTypes.number.isRequired
-//       }
-//     ).isRequired
-//   ).isRequired
-// }
 export default Product;

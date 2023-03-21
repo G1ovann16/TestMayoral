@@ -8,25 +8,28 @@ import {
 import Product from "./product";
 
 export default function ListStore(data: any) {
-  const [dataStore, setDataStore] = useState([]);
+  const [dataStore, setDataStore] = useState({});
   const [busqueda, setBusqueda] = useState("");
 
   const handleOnChange = (e: any) => {
     setBusqueda(e.target.value);
     filtrar(e.target.value);
-    console.log(busqueda);
   };
 
   const filtrar = (b: string) => {
-    data.data
-      .filter((item) => item?.title.toLowerCase().includes(b))
-      .map((e: any, i: number) => setDataStore(e));
+    const filterData = data.data?.filter((item: any) =>
+      item?.title.toLowerCase().includes(b)
+    );
+    setDataStore([...filterData]);
   };
 
-  const sortUp = () => {};
-
+  const sortUp = () => {
+    const dataCopy = data.data?.sort((a: any, b: any) => b.price - a.price);
+    setDataStore([...dataCopy]);
+  };
   const sortDown = () => {
-    // dataStore.sort
+    const dataCopy = data.data?.sort((a: any, b: any) => a.price - b.price);
+    setDataStore([...dataCopy]);
   };
   useEffect(() => {
     setDataStore(data.data);
@@ -49,17 +52,16 @@ export default function ListStore(data: any) {
           </button>
         </div>
         <div className="sort d-flex">
-          <button className="btn btn-success m-1">
+          <button className="btn btn-success m-1" onClick={sortDown}>
             <FontAwesomeIcon icon={faMinusSquare} />
           </button>
-          <button className="btn btn-success m-1">
+          <button className="btn btn-success m-1" onClick={sortUp}>
             <FontAwesomeIcon icon={faPlusSquare} />
           </button>
         </div>
       </div>
       <div className="row m-3 p-2">
-        {/* dataStore && dataStore */}
-        {data.data?.map((d: any, i: number) => (
+        {dataStore?.map?.((d: any, i: number) => (
           <Product d={d} key={i} />
         ))}
       </div>
