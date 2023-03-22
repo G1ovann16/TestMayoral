@@ -1,38 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Comenzando 🚀
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-## Getting Started
+Mira Deployment para conocer como desplegar el proyecto.
 
-First, run the development server:
+Pre-requisitos 📋
+Que cosas necesitas para instalar el software y como instalarlas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Da un ejemplo
+Instalación 🔧
+Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dí cómo será ese paso
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Da un ejemplo
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Ejecutando las pruebas ⚙️
+Explica como ejecutar las pruebas automatizadas para este sistema
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Analice las pruebas end-to-end 🔩
+Explica que verifican estas pruebas y por qué
 
-## Learn More
+Da un ejemplo
+Y las pruebas de estilo de codificación ⌨️
+Explica que verifican estas pruebas y por qué
 
-To learn more about Next.js, take a look at the following resources:
+Da un ejemplo
+Despliegue 📦
+Agrega notas adicionales sobre como hacer deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Construido con 🛠️
+Menciona las herramientas que utilizaste para crear tu proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Dropwizard - El framework web usado
 
-## Deploy on Vercel
+Contribuyendo 🖇️
+Por favor lee el CONTRIBUTING.md para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Versionado 📌
+
+Autores ✒️
+
+
+Licencia 📄
+Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo LICENSE.md para detalles
+
